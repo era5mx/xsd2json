@@ -10,5 +10,12 @@ gradle xjc
 La generacion de los xsd se realiza ejecutando la clase SchemaGeneration
 
 
+El ejercicio se realizó con el xsd público disponible en el url:
+
+<a href="http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv32.xsd" target="_blank"> http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv32.xsd</a>
+
+Pero, debería trabajar apropiadamente con cualquier xsd valido.
+
+
 ---
 Los acentos han sido omitidos intencionalmente en este documento
