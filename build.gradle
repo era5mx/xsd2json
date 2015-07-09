@@ -1,0 +1,83 @@
+plugins {
+  id "com.github.jacobono.jaxb" version "1.3.5"
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+version = '1.0'
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Gradle XJC',
+                   'Implementation-Version': version
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+defaultTasks 'clean', 'build'
+
+List jaxbDepend = ['com.sun.xml.bind:jaxb-xjc:2.2.7-b41'
+      		,'com.sun.xml.bind:jaxb-impl:2.2.7-b41'
+      		,'javax.xml.bind:jaxb-api:2.2.7'
+      		,'com.sun.xml.bind:jaxb-ri:2.2.11'
+]
+
+// # No funciona con la nueva version #
+//List jaxbDepend = ['com.sun.xml.bind:jaxb-xjc:2.2.11'
+//    		,'com.sun.xml.bind:jaxb-impl:2.2.11'
+//    		,'javax.xml.bind:jaxb-api:2.2.12'
+//          ,'com.sun.xml.bind:jaxb-ri:2.2.11'
+//]
+
+List jaxb2CommonsDepend = ['org.jvnet.jaxb2_commons:jaxb2-basics-jaxb-xjc:2.2.4-1'
+    		,'org.jvnet.jaxb2_commons:jaxb2-basics-runtime:0.9.4'
+    		,'org.jvnet.jaxb2_commons:jaxb2-basics-ant:0.9.4'
+    		,'org.jvnet.jaxb2_commons:jaxb2-basics-annotate:1.0.1'
+    		,'org.jvnet.jaxb2_commons:jaxb2-basics-tools:0.9.4'
+]
+
+List log4jDepend = ['org.apache.logging.log4j:log4j-api:2.3'
+             ,'org.apache.logging.log4j:log4j-core:2.3'
+             ,'org.slf4j:slf4j-log4j12:1.7.12'
+]
+
+List jacksonDepend = ['com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.5.4'
+            ,'com.fasterxml.jackson.module:jackson-module-jsonSchema:2.5.4'
+]
+
+List commonsDepend = ['commons-collections:commons-collections:3.2'
+			 ,'org.apache.commons:commons-lang3:3.4'
+			 ,'commons-logging:commons-logging:1.2'
+]
+
+dependencies {
+    jaxb jaxbDepend, jaxb2CommonsDepend
+    compile log4jDepend, commonsDepend
+    compile jacksonDepend
+    testCompile group: 'junit', name: 'junit', version: '4.+'
+}
+
+test {
+    systemProperties 'property': 'value'
+}
+
+uploadArchives {
+    repositories {
+       flatDir {
+           dirs 'repos'
+       }
+    }
+}
+
+jaxb {
+  xsdDir = "src/main/resources/xsd"
+  xjc {
+     taskClassname      = "org.jvnet.jaxb2_commons.xjc.XJC2Task"
+     generatePackage    = "mx.com.microsoft.extend"
+     //args               = ["-Xinheritance", "-Xannotate"]
+     args               = ["-Xannotate"]
+  }
+}
