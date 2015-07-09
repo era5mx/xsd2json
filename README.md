@@ -9,6 +9,7 @@ gradle xjc
 
 La generacion de los xsd se realiza ejecutando la clase SchemaGeneration
 
+En la interfaz Constantes se define el Path del archivo config.properties asi como las claves para recuperar los valores definidos en este.
 
 El ejercicio se realizó con el xsd público disponible en el url:
 
