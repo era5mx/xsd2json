@@ -1,11 +1,10 @@
 /**
- *
+ * Interfaz para la definicion de contantes
  */
 package net.puenteg.extend;
 
 /**
- * @author alexander
- *
+ * @author <a href=mailto:david@rengifo.mx>David Rengifo</a>
  */
 public interface Constantes {
 

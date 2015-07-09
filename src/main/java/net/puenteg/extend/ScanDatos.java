@@ -13,7 +13,7 @@ import org.apache.commons.lang3.StringUtils;
  * Lee el directorio indicado y obtiene la lista de archivos java
  * excluyendo package-info.java y ObjectFactory.java
  *
- * @author david.rengifo
+ * @author <a href=mailto:david@rengifo.mx>David Rengifo</a>
  */
 public class ScanDatos {
 

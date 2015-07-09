@@ -1,5 +1,5 @@
 /**
- *
+ * Utileria para cargar los valores definidos en el archivo config.properties
  */
 package net.puenteg.extend;
 
@@ -9,8 +9,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 /**
- * @author alexander
- *
+ * @author <a href=mailto:david@rengifo.mx>David Rengifo</a>
  */
 public class UtilProperties implements Constantes {
 

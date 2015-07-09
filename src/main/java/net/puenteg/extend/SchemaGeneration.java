@@ -20,8 +20,7 @@ import com.fasterxml.jackson.module.jsonSchema.JsonSchema;
 import com.fasterxml.jackson.module.jsonSchema.factories.SchemaFactoryWrapper;
 
 /**
- * @author alexander
- *
+ * @author <a href=mailto:david@rengifo.mx>David Rengifo</a>
  */
 public class SchemaGeneration implements Constantes {
 
