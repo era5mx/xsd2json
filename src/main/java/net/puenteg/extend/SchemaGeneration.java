@@ -23,14 +23,11 @@ import com.fasterxml.jackson.module.jsonSchema.factories.SchemaFactoryWrapper;
  * @author alexander
  *
  */
-public class SchemaGeneration {
+public class SchemaGeneration implements Constantes {
 
 	private static Logger logger = LogManager.getLogger(SchemaGeneration.class);
 
-	/** Constante para cargar el valor de DATOS_DIR configurado en el config.properties */
-	private static final String DATOS_DIR = "DATOS_DIR";
-	/** Constante para cargar el valor de JSON_DIR configurado en el config.properties */
-	private static final String JSON_DIR = "JSON_DIR";
+
 
 	/**
 	 * @param args

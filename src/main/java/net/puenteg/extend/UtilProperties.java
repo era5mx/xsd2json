@@ -12,15 +12,10 @@ import java.util.Properties;
  * @author alexander
  *
  */
-public class UtilProperties {
+public class UtilProperties implements Constantes {
 
 	/**
-	 * Path del archivo properties
-	 */
-	private static final String CONFIG_PROPERTIES = "C:\\ws\\p\\jaxb_stax\\src\\main\\resources\\config.properties";
-
-	/**
-	 *
+	 * Constructor
 	 */
 	public UtilProperties() {
 	}
